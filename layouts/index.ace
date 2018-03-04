@@ -1,0 +1,30 @@
+= doctype html
+html lang=en
+  {{ partial "header" . }}
+  body
+    {{ define "main" }}
+    main[aria-role=main]
+      header.homepage-header
+        h1 {{ .Title }}
+        {{ with .Params.subtitle }}
+        span.subtitle {{.}}
+        {{ end }}
+    {{ end }}
+
+    div.homepage-content
+      {{.Content}}
+  
+    h2 Latest posts
+    div.blog-recent
+      {{ range first 10 .Data.Pages }}
+        div.post
+          div.categories
+            {{ range .Params.Categories }}
+            div.category {{ . }}
+            {{ end }}
+          a.title href="{{ .RelPermalink }}" {{ .Title }}
+          span.date {{ .Date.Format "Jan 1, 2006" }}
+          span.summary {{ .Summary }}
+          a.readmore href="{{ .RelPermalink}}" Read more...
+        {{ .Render "summary" }}
+      {{ end }}
