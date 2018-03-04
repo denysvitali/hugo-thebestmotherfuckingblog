@@ -233,7 +233,6 @@ blockquote{
   }
 }
 
-
 // ===== TBMFW specific styles ======
 
 span.visited{
@@ -481,12 +480,12 @@ footer{
     color: @bodybgColor;
   }
 
-  div.left{
+  div.left {
     float: left;
     width: 50%;
   }
 
-  div.right{
+  div.right {
     float: left;
     width: 50%;
   }
@@ -519,6 +518,15 @@ footer{
 
   table{
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  footer { 
+    div.left, div.right {
+      float: none;
+      width: 100%;
+    }
   }
 }
 
