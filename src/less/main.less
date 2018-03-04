@@ -343,7 +343,7 @@ span.subtitle{
   color: lighten(@bodyTextColor, 10%);
 }
 
-header div.social {
+div.social {
   margin-top: 0.5em;
   text-align: center;
   margin-left: auto;
@@ -371,73 +371,140 @@ header div.social {
   }
 }
 
-div.blog-recent{
-  div.post{
-    
-    display: block;
-    border-top: 1px solid @bodyTextColor;
-    margin-bottom: 2em;
-    padding-top: 1em;
+div.post{   
+  display: block;
+  margin-bottom: 2em;
+  padding-top: 1em;
+  padding-bottom: 3em;
+  border-bottom: 1px solid #CCC;
 
-    div.categories{
-      div.category{
-        @marginLeft: 0.2em;
-        display: inline-block;
-        margin-left: @marginLeft;
-        color: @categoriesColor;
-        text-transform: uppercase;
-        font-size: 0.8em;
+  &:last-child{
+    border-bottom: 0;
+  }
 
-        &:after{
-          display: inline-block;
-          content: " | ";
-          margin-left: @marginLeft;
-        }
-      }
-
-      div.category:nth-child(0n + 1){
-        margin-left: 0;
-      }
-
-      div.category:last-child{
-        &:after{
-          content: "";
-        }
-      }
-    }
-
-    span.date{
-      display: block;
-      font-size: 0.8em;
-      margin-bottom: 0.5em;
-      text-transform: uppercase;
-    }
-
-    .title{
-      display: block;
-      font-size: 1.5em;
-      font-weight: bold;
-      color: @postTitleColor;
-      text-decoration: none;
-      margin-top: 0.3em;
-    }
-
-    .title:visited{
-      color: @postTitleColor;
-    }
-
-    span.summary{
+  div.categories{
+    div.category{
+      @marginLeft: 0.2em;
       display: inline-block;
-      margin-top: 0.5em;
+      margin-left: @marginLeft;
+      color: @categoriesColor;
+      text-transform: uppercase;
+      font-size: 0.8em;
+
+      &:after{
+        display: inline-block;
+        content: " | ";
+        margin-left: @marginLeft;
+      }
     }
 
-    a.readmore{
-      color: @readMoreColor;
-      display: block;
+    div.category:nth-child(0n + 1){
+      margin-left: 0;
     }
 
-    a.readmore:visited{
-      color: @readMoreColor;
+    div.category:last-child{
+      &:after{
+        content: "";
+      }
     }
   }
+
+  span.date{
+    display: block;
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+  }
+
+  .title{
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: @postTitleColor;
+    text-decoration: none;
+    margin-top: 0.3em;
+  }
+
+  .title:visited{
+    color: @postTitleColor;
+  }
+
+  span.summary{
+    display: inline-block;
+    margin-top: 0.5em;
+  }
+
+  a.readmore{
+    color: @readMoreColor;
+    display: block;
+  }
+
+  a.readmore:visited{
+    color: @readMoreColor;
+  }
+}
+
+
+div.post-content{
+  div.post{
+    border-top: 0;
+  }
+}
+
+footer{
+  display: block;
+  color: @bodybgColor;
+  background-color: @footerColor;
+  margin-top: 4em;
+  padding: 40px;
+  padding-top: 20px;
+
+  a,a:visited{
+    color: @bodybgColor;
+  }
+
+  div.left{
+    float: left;
+    width: 50%;
+  }
+
+  div.right{
+    float: left;
+    width: 50%;
+  }
+
+  div.left div.inner, div.right div.inner{
+    padding-top: 0;
+    text-align: justify;
+  }
+
+  @middleSpace: 60px;
+
+  div.left div.inner{
+    margin-right: @middleSpace/2;
+  }
+
+  div.right div.inner{
+    margin-left: @middleSpace/2;
+  }
+
+  &:after{
+    display: block;
+    content: "";
+    clear: both;
+  }
+
+  span.invemail{
+    unicode-bidi:bidi-override;
+    direction:rtl;
+  }
+
+  table{
+    width: 100%;
+  }
+}
+
+a.site-title, a.site-title:visited{
+  color: @titleColor;
+  text-decoration: none;
 }

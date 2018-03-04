@@ -1,0 +1,17 @@
+= doctype html
+html lang=en
+  {{ partial "header" . }}
+    div.post-content
+      div.post
+        span.title. {{.Title}}
+        div.content
+          {{.Content}}
+  div#diqus_thread
+  script. type="text/javascript"
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://denvit.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+  {{ partial "footer" . }}

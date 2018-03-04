@@ -15,33 +15,6 @@ head
         {{ end }}
       {{ end }}
 
-      h1 {{ .Site.Params.site_author }}'s blog
+      h1
+        a.site-title href="{{.Site.BaseURL}}" {{ .Site.Params.site_author }}&#39;s Blog
       span.subtitle {{ .Site.Params.site_description }}
-
-      div.social
-        {{ with .Site.Data.social }}
-        {{ if .twitter }}
-        div.twitter
-          a href="https://twitter.com/{{.twitter}}"
-            img.social-logo src="{{.Site.BaseURL}}img/social/twitter.svg"
-        {{ end }}     
-
-        {{ if .github }}
-        div.github
-          a href="https://github.com/{{.github}}"
-            img.social-logo src="{{.Site.BaseURL}}img/social/github.svg"
-        {{ end }}
-
-        {{ if .linkedin }}
-        div.linkedin
-          a href="https://linkedin.com/in/{{.linkedin}}"
-            img.social-logo src="{{.Site.BaseURL}}img/social/linkedin.svg"
-        {{ end }}
-
-        {{ if .instagram }}
-        div.instagram
-          a href="https://instagr.am/{{.instagram}}"
-            img.social-logo src="{{.Site.BaseURL}}img/social/instagram.png"
-        {{ end }}
-
-        {{ end }}

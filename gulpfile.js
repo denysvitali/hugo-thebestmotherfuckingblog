@@ -3,6 +3,7 @@ const gulp = require('gulp');
 const less = require('gulp-less');
 const lessChanged = require('gulp-less-changed');
 const cssnano = require('gulp-cssnano');
+const autoprefix = require('less-plugin-autoprefix');
 const del = require('del');
 
 gulp.task('views', () => {
@@ -13,8 +14,9 @@ gulp.task('views', () => {
 
 gulp.task('less', () => {
     return gulp.src('src/less/**/*.less')
-        .pipe(lessChanged())
-        .pipe(less())
+        .pipe(less({
+            plugins: [autoprefix]
+        }))
         .pipe(gulp.dest('static/css/'));
 });
 
