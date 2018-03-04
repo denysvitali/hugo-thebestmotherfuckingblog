@@ -14,8 +14,11 @@ html lang=en
             {{ end }}
           a.title href="{{ .RelPermalink }}" {{ .Title }}
           span.date {{ .Date.Format "Jan 1, 2006" }}
+          span.separator -
+          span.reading-time {{ .ReadingTime }} min read
           span.summary {{ .Summary }}
+          {{ if .Truncated }}
           a.readmore href="{{ .RelPermalink}}" Read more...
-        {{ .Render "summary" }}
+          {{ end }}
       {{ end }}
   {{ partial "footer" . }}

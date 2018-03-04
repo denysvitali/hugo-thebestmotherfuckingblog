@@ -378,6 +378,10 @@ div.post{
   padding-bottom: 3em;
   border-bottom: 1px solid #CCC;
 
+  div.reading-time{
+    font-size: 0.9em;
+  }
+  
   &:last-child{
     border-bottom: 0;
   }
@@ -409,11 +413,25 @@ div.post{
     }
   }
 
+  @separation: 15px;
+
   span.date{
-    display: block;
+    display: inline-block;
     font-size: 0.8em;
     margin-bottom: 0.5em;
     text-transform: uppercase;
+  }
+
+  span.separator{
+    display: inline-block;
+    font-size: 0.8em;
+    margin-left: @separation/2;
+  }
+
+  span.reading-time{
+    display:inline-block;
+    font-size: 0.8em;
+    margin-left: @separation/2;
   }
 
   .title{
@@ -507,4 +525,12 @@ footer{
 a.site-title, a.site-title:visited{
   color: @titleColor;
   text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+}
+
+div.highlight{
+  padding: 5px 20px 5px 20px;
 }
