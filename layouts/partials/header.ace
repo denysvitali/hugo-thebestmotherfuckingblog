@@ -6,6 +6,9 @@ head
 
   body
     header.top
+      {{ if .Site.Params.main_website }}
+      a.back-to-website href="{{ .Site.Params.main_website }}" ⇠ Back to the Website
+      {{ end }}
       {{ define "main" }}
       main[aria-role=main]
         header.homepage-header
