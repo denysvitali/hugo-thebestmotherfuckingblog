@@ -6,4 +6,4 @@ html lang=en
         span.title. {{.Title}}
         div.content
           {{.Content}}
-  {{ template "_internal/disqus.html" . }}
+  {{ partial "disqus" . }}
