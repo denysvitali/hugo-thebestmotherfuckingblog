@@ -16,22 +16,16 @@ footer
               img.social-logo src="{{.BaseURL}}img/social/twitter.svg"
           {{ end }}     
 
+          {{ if .Data.social.telegram }}
+          div.instagram
+            a target="_blank" href="https://instagr.am/{{.Data.social.telegram}}"
+              img.social-logo src="{{.BaseURL}}img/social/telegram.svg"
+          {{ end }}
+
           {{ if .Data.social.github }}
           div.github
             a target="_blank" href="https://github.com/{{.Data.social.github}}"
               img.social-logo src="{{.BaseURL}}img/social/github.svg"
-          {{ end }}
-
-          {{ if .Data.social.linkedin }}
-          div.linkedin
-            a target="_blank" href="https://linkedin.com/in/{{.Data.social.linkedin}}"
-              img.social-logo src="{{.BaseURL}}img/social/linkedin.svg"
-          {{ end }}
-
-          {{ if .Data.social.keybase }}
-          div.keybase
-            a target="_blank" href="https://keybase.io/{{.Data.social.keybase}}"
-              img.social-logo src="{{.BaseURL}}img/social/keybase.svg"
           {{ end }}
 
           {{ if .Data.social.spotify }}
@@ -40,10 +34,22 @@ footer
               img.social-logo src="{{.BaseURL}}img/social/spotify.svg"
           {{ end }}
 
+          {{ if .Data.social.linkedin }}
+          div.linkedin
+            a target="_blank" href="https://linkedin.com/in/{{.Data.social.linkedin}}"
+              img.social-logo src="{{.BaseURL}}img/social/linkedin.svg"
+          {{ end }}
+
           {{ if .Data.social.instagram }}
           div.instagram
             a target="_blank" href="https://instagr.am/{{.Data.social.instagram}}"
               img.social-logo src="{{.BaseURL}}img/social/instagram.png"
+          {{ end }}
+
+          {{ if .Data.social.keybase }}
+          div.keybase
+            a target="_blank" href="https://keybase.io/{{.Data.social.keybase}}"
+              img.social-logo src="{{.BaseURL}}img/social/keybase.svg"
           {{ end }}
 
           {{ end }}
