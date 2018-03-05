@@ -7,3 +7,4 @@ html lang=en
         div.content
           {{.Content}}
   {{ partial "disqus" . }}
+  {{ partial "footer" . }}
