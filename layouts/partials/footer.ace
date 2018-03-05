@@ -3,6 +3,9 @@ footer
     div.left
       div.inner
         h3 About the author
+        {{ if .Site.Data.about.profile_pic }}
+        img.profile-pic src="{{ .Site.Data.about.profile_pic }}"
+        {{ end }}
         {{ readFile "include/footer/author.md" | markdownify }}
 
     div.right
