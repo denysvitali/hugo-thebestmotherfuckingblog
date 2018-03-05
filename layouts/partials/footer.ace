@@ -34,6 +34,12 @@ footer
               img.social-logo src="{{.BaseURL}}img/social/keybase.svg"
           {{ end }}
 
+          {{ if .Data.social.spotify }}
+          div.spotify
+            a target="_blank" href="https://play.spotify.com/user/{{.Data.social.spotify}}/"
+              img.social-logo src="{{.BaseURL}}img/social/spotify.svg"
+          {{ end }}
+
           {{ if .Data.social.instagram }}
           div.instagram
             a target="_blank" href="https://instagr.am/{{.Data.social.instagram}}"
