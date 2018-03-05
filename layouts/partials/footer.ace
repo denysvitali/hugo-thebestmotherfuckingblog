@@ -18,7 +18,7 @@ footer
 
           {{ if .Data.social.telegram }}
           div.instagram
-            a target="_blank" href="https://instagr.am/{{.Data.social.telegram}}"
+            a target="_blank" href="https://telegram.me/{{.Data.social.telegram}}"
               img.social-logo src="{{.BaseURL}}img/social/telegram.svg"
           {{ end }}
 
