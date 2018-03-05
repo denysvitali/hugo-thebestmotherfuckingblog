@@ -1,7 +1,7 @@
 head
   meta charset="utf-8"
   meta name="viewport" content="width=device-width, initial-scale=1"
-  link href="{{.Site.BaseURL}}/css/main.css" rel="stylesheet"
+  link href="{{.Site.BaseURL}}css/main.css" rel="stylesheet"
   title {{ .Site.Title }} - {{ .Page.Title }}
 
   body
