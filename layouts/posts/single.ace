@@ -4,7 +4,7 @@ html lang=en
     div.post-content
       div.post
         span.title. {{.Title}}
-        span.date {{ .Date.Format "Jan 1, 2006" }}
+        span.date {{ .Date.Format "Jan 2, 2006" }}
         span.separator -
         span.reading-time {{ .ReadingTime }} min read
         div.content

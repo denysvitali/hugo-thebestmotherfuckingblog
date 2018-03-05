@@ -13,7 +13,7 @@ html lang=en
             div.category {{ . }}
             {{ end }}
           a.title href="{{ .RelPermalink }}" {{ .Title }}
-          span.date {{ .Date.Format "Jan 1, 2006" }}
+          span.date {{ .Date.Format "Jan 2, 2006" }}
           span.separator -
           span.reading-time {{ .ReadingTime }} min read
           span.summary {{ .Summary }}
