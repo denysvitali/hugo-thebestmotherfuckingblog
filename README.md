@@ -1,6 +1,6 @@
 # The Best Motherfucking Blog Theme
 
-I'm personally using this on [my blog](denv.it/blog).
+I'm personally using this on [my blog](https://denv.it/blog).
 
 ## Similar projects
 
