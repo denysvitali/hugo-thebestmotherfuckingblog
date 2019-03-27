@@ -6,30 +6,36 @@ const cssnano = require('gulp-cssnano');
 const autoprefix = require('less-plugin-autoprefix');
 const del = require('del');
 
-gulp.task('views', () => {
+function views() {
     return gulp.src('src/pug/*.pug')
         .pipe(pug({}))
         .pipe(gulp.dest('dist/'));
-});
+}
 
-gulp.task('less', () => {
+function less_() {
     return gulp.src('src/less/**/*.less')
         .pipe(less({
             plugins: [autoprefix]
         }))
         .pipe(gulp.dest('static/css/'));
-});
+}
 
-gulp.task('clean', (cb) => {
-    return del.sync('static/css',cb);
-});
+function clean() {
+    return del(['static/css']);
+}
 
-gulp.task('watch', () => {
+function watch() {
     return gulp.watch('src/less/**/*', ['default']);
-});
+}
 
-gulp.task('build', ['less']);
+var build = gulp.series(less_);
 
-gulp.task('cleanandbuild', ['clean', 'build']);
+var cleanandbuild = gulp.series(clean, build);
 
-gulp.task('default', ['cleanandbuild']);
+exports.views = views;
+exports.less_ = less_;
+exports.clean = clean;
+exports.watch = watch;
+exports.build = build;
+exports.cleanandbuild = cleanandbuild;
+exports.default = cleanandbuild;
