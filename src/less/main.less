@@ -1,4 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import (css) url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+@import '~@fortawesome/fontawesome-free/less/fontawesome.less';
+@import '~@fortawesome/fontawesome-free/less/regular.less';
+@import '~@fortawesome/fontawesome-free/less/solid.less';
 
 @import "inc/colors.less";
 
@@ -109,7 +113,7 @@ span.citneed{
 }
 
 small{
-  font-size: 0.4em;
+  font-size: 0.5em;
 }
 
 p.st{
@@ -156,10 +160,24 @@ ul{
 }
 
 blockquote{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 0px;
+  grid-column-gap: 10px;
   color: @blockQuoteColor;
   margin-left: 0;
   margin-top: 2em;
   margin-bottom: 2em;
+
+
+  &> * {
+    grid-column-start: 3;
+    margin-bottom: 0;
+  }
+
+  &> *:nth-child(0n + 1){
+    margin-top: 0;
+  }
 
   span{
     float: left;
@@ -181,21 +199,71 @@ blockquote{
   }
 
   &::before{
-    font-family: "Times New Roman", Times, Arial;
-    color: @openQuoteColor;
-    content: open-quote;
+    content: "";
     font-size: 2.2em;
     font-weight: 600;
-    float: left;
     margin-top: 0em;
-    margin-right: 0.2rem;
-    width: 1.2rem;
+    border-left: 4px solid @blockQuoteColor;
+    grid-row-start: 1;
+    grid-row-end: 999;
+    height: 100%;
+  }
+}
+
+div.box {
+  display: flex;
+  @boxPadding: 10px;
+  border-radius: 2px;
+  padding: @boxPadding;
+
+  > .box-icon {
+    line-height: 2em;
+    margin-right: 15px;
+    margin-left: 10px;
+    margin-top: 1px;
+    min-height: 1em;
   }
 
-  &::after{
-    content: "";
-    display: block;
-    clear: both;
+  .box-content {
+    margin-top: 0.333em;
+  }
+}
+
+div.warning-box {
+  color: @warningForegroundColor;
+  background-color: @warningColor;
+}
+
+div.information-box {
+  color: @informationForegroundColor;
+  background-color: @informationColor;
+}
+
+
+table {
+  border-spacing: 0px;
+  border-collapse: collapse;
+  tr {
+    border: 1px solid #CCC;
+
+    th {
+      background-color: #CFD8DC;
+    }
+
+    th, td {
+      padding: 10px;
+      @paddingSize: 8px;
+      padding-top: @paddingSize;
+      padding-bottom: @paddingSize;
+    }
+
+    &:nth-child(2n + 1){
+      background-color: #ECEFF1;
+    }
+  }
+
+  tr.table-header {
+    border-bottom: 3px solid #666;
   }
 }
 
